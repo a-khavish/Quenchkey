@@ -1,0 +1,54 @@
+name: build
+
+# Checks the installer works on a clean machine, as an unprivileged user,
+# and that uninstalling leaves nothing behind.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install as an ordinary user
+        run: bash install.sh --user
+
+      - name: It runs
+        run: ~/.local/bin/quenchkey --version
+
+      - name: The command line runs without a display
+        run: |
+          ~/.local/bin/quenchkey --help-commands
+          ~/.local/bin/quenchkey lock --help
+
+      - name: Uninstall
+        run: bash install.sh --uninstall <<< "y"
+
+      - name: Nothing left behind
+        run: |
+          for path in ~/.local/bin/quenchkey ~/.local/lib/quenchkey \
+                      ~/.local/share/applications/quenchkey.desktop; do
+            if [ -e "$path" ]; then echo "left behind: $path"; exit 1; fi
+          done
+
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install build
+      - run: python -m build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: distributions
+          path: dist/*

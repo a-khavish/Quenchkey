@@ -1,0 +1,75 @@
+name: tests
+
+# The suite drives a real Qt application and a real window manager, so this
+# installs both rather than skipping the parts that need a display. A run that
+# quietly skipped the interface tests would be worse than no run at all.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.9", "3.11", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+
+      - name: System packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            libxcb-xinerama0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 \
+            libxcb-randr0 libxcb-render-util0 libxcb-shape0 libxcb-xkb1 \
+            libxkbcommon-x11-0 libegl1 \
+            xvfb openbox x11-utils p7zip-full openssl
+
+      - name: Python packages
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+          python -m pip install ruff
+
+      - name: Lint
+        run: python -m ruff check --select F,E --line-length 100 .
+
+      - name: Tests
+        run: xvfb-run -a -s "-screen 0 1600x1200x24" python -m pytest -q
+
+      - name: Every dialog fits a small screen
+        run: |
+          for scale in 1.0 1.25 1.5 2.0; do
+            QT_SCALE_FACTOR=$scale xvfb-run -a -s "-screen 0 1366x768x24" \
+              python tools/dialog_parade.py
+          done
+
+  standalone:
+    # The recovery tool claims to need nothing from this project. Proved by
+    # running it with the project unreachable, on a machine that has only the
+    # two libraries it says it needs.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install cryptography argon2-cffi shamir-mnemonic
+      - run: sudo apt-get update && sudo apt-get install -y p7zip-full
+      - name: It imports nothing from the package
+        run: |
+          ! grep -qE "^(from|import) quenchkey" tools/quenchkey-recover.py
+          cd /tmp && python "$GITHUB_WORKSPACE/tools/quenchkey-recover.py" --help

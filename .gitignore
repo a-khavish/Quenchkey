@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+.venv/
+venv/
+
+# Tooling
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Anything that is or was a vault. Belt and braces: none of this belongs in a
+# repository, and a stray one committed by accident would be a secret in the
+# history forever.
+*.qkv
+*.qkv.*
+*.qkey
+*.qkvbak
+*.qkid
+*.audit
+*.tsr
+*.schedule
+*.pending
+*.warned
+
+# Editors and desktops
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store

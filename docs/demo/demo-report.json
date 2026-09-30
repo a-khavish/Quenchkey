@@ -1,0 +1,386 @@
+{
+  "ok": true,
+  "steps": [
+    {
+      "step": "weak-passphrase",
+      "caption": "A weak passphrase is priced, and refused",
+      "at": 3.0,
+      "ok": true,
+      "note": "the floor held"
+    },
+    {
+      "step": "generate",
+      "caption": "Generate draws 24 random characters \u2014 157 bits exactly",
+      "at": 6.6,
+      "ok": true,
+      "note": "24 characters, all four classes, then masked before the camera got it"
+    },
+    {
+      "step": "confirm",
+      "caption": "The confirmation field is filled in for you",
+      "at": 12.2,
+      "ok": true,
+      "note": "copied across, not retyped"
+    },
+    {
+      "step": "create-vault",
+      "caption": "Creating the vault \u2014 Argon2id deliberately takes a second",
+      "at": 13.6,
+      "ok": true
+    },
+    {
+      "step": "lock-open",
+      "caption": "Locking three documents",
+      "at": 20.5,
+      "ok": true
+    },
+    {
+      "step": "choose-files",
+      "caption": "Choosing the files",
+      "at": 22.6,
+      "ok": true,
+      "note": "3 files"
+    },
+    {
+      "step": "rules",
+      "caption": "Setting an opening allowance and a check-in interval",
+      "at": 33.2,
+      "ok": true,
+      "note": "two openings, 7-day check-in, 24-hour deadline"
+    },
+    {
+      "step": "lock-confirm",
+      "caption": "Confirming \u2014 the dialog states every rule",
+      "at": 40.9,
+      "ok": true
+    },
+    {
+      "step": "warned",
+      "caption": "Warned a day ahead, once, before any key is destroyed",
+      "at": 53.6,
+      "ok": true,
+      "note": "said once; moving the deadline arms it again"
+    },
+    {
+      "step": "anchor",
+      "caption": "The anchor: a fingerprint of the vault's whole history",
+      "at": 57.2,
+      "ok": true,
+      "note": "and an authority can sign it, with only a hash leaving here"
+    },
+    {
+      "step": "loan",
+      "caption": "Lending it out, editing it, and bringing it back",
+      "at": 63.1,
+      "ok": true,
+      "note": "the edit went into the vault; the copy did not survive"
+    },
+    {
+      "step": "open",
+      "caption": "Opening it for good \u2014 this spends the last opening",
+      "at": 85.8,
+      "ok": true,
+      "note": "extracted"
+    },
+    {
+      "step": "expire",
+      "caption": "The allowance is spent, so the key is destroyed \u2014 now",
+      "at": 95.1,
+      "ok": true,
+      "note": "the row reads 2/2 openings, key destroyed"
+    },
+    {
+      "step": "certificates",
+      "caption": "Destruction leaves a signed certificate behind",
+      "at": 97.7,
+      "ok": true
+    },
+    {
+      "step": "shares",
+      "caption": "Recovery shares: any three of five reopen the vault",
+      "at": 107.3,
+      "ok": true,
+      "note": "5 shares, any three, never filmed"
+    },
+    {
+      "step": "backups",
+      "caption": "A vault backup, priced before it is restored",
+      "at": 128.4,
+      "ok": true,
+      "note": "a copy, and what restoring one would undo"
+    },
+    {
+      "step": "watched",
+      "caption": "A folder that locks whatever lands in it",
+      "at": 137.8,
+      "ok": true,
+      "note": "the desktop's own chooser picks the folder"
+    },
+    {
+      "step": "duress",
+      "caption": "The duress passphrase, and what it cannot pretend to be",
+      "at": 147.2,
+      "ok": true,
+      "note": "stated in the dialog, not buried in the manual"
+    },
+    {
+      "step": "integrity",
+      "caption": "Checking every locked file against its recorded digest",
+      "at": 156.6,
+      "ok": true,
+      "note": "read back and compared, and honest about what that buys"
+    },
+    {
+      "step": "identity",
+      "caption": "This vault's identity card, which holds no secret",
+      "at": 171.1,
+      "ok": true,
+      "note": "a fingerprint to read out, and a signature over the key"
+    },
+    {
+      "step": "handover",
+      "caption": "Handing a file to another vault, deadline and all",
+      "at": 180.3,
+      "ok": true,
+      "note": "the three things it does not buy, on the screen"
+    },
+    {
+      "step": "auditor",
+      "caption": "A record an auditor can check, with no keys in it",
+      "at": 189.7,
+      "ok": true,
+      "note": "built from the vault rather than carved out of it"
+    },
+    {
+      "step": "share",
+      "caption": "Locking files to send someone \u2014 no deadline, and it says so",
+      "at": 199.1,
+      "ok": true,
+      "note": "the warning is on the screen, not in a tooltip"
+    },
+    {
+      "step": "unlock-shared",
+      "caption": "Unlocking shared files, several at a time",
+      "at": 208.5,
+      "ok": true,
+      "note": "listed, with the desktop's own chooser for the rest"
+    },
+    {
+      "step": "settings",
+      "caption": "Settings: where files are saved, and what closing does",
+      "at": 217.9,
+      "ok": true
+    },
+    {
+      "step": "help",
+      "caption": "The manual, in the application",
+      "at": 227.5,
+      "ok": true,
+      "note": "17 pages"
+    },
+    {
+      "step": "lock-vault",
+      "caption": "Locking the vault wipes every key from memory",
+      "at": 237.1,
+      "ok": true
+    }
+  ],
+  "error": null,
+  "passphrase_words": 2,
+  "demo_shares": "5 generated, not recorded",
+  "finished": true,
+  "captions": [
+    [
+      3.02,
+      "A weak passphrase is priced, and refused"
+    ],
+    [
+      6.57,
+      "Generate draws 24 random characters \u2014 157 bits exactly"
+    ],
+    [
+      12.23,
+      "The confirmation field is filled in for you"
+    ],
+    [
+      13.55,
+      "Creating the vault \u2014 Argon2id deliberately takes a second"
+    ],
+    [
+      20.55,
+      "Locking three documents"
+    ],
+    [
+      22.64,
+      "Choosing the files"
+    ],
+    [
+      33.25,
+      "Setting an opening allowance and a check-in interval"
+    ],
+    [
+      40.88,
+      "Confirming \u2014 the dialog states every rule"
+    ],
+    [
+      53.64,
+      "Warned a day ahead, once, before any key is destroyed"
+    ],
+    [
+      57.17,
+      "The anchor: a fingerprint of the vault's whole history"
+    ],
+    [
+      63.11,
+      "Lending it out, editing it, and bringing it back"
+    ],
+    [
+      85.82,
+      "Opening it for good \u2014 this spends the last opening"
+    ],
+    [
+      95.11,
+      "The allowance is spent, so the key is destroyed \u2014 now"
+    ],
+    [
+      97.73,
+      "Destruction leaves a signed certificate behind"
+    ],
+    [
+      107.35,
+      "Recovery shares: any three of five reopen the vault"
+    ],
+    [
+      128.38,
+      "A vault backup, priced before it is restored"
+    ],
+    [
+      137.78,
+      "A folder that locks whatever lands in it"
+    ],
+    [
+      147.2,
+      "The duress passphrase, and what it cannot pretend to be"
+    ],
+    [
+      156.62,
+      "Checking every locked file against its recorded digest"
+    ],
+    [
+      171.06,
+      "This vault's identity card, which holds no secret"
+    ],
+    [
+      180.29,
+      "Handing a file to another vault, deadline and all"
+    ],
+    [
+      189.7,
+      "A record an auditor can check, with no keys in it"
+    ],
+    [
+      199.11,
+      "Locking files to send someone \u2014 no deadline, and it says so"
+    ],
+    [
+      208.49,
+      "Unlocking shared files, several at a time"
+    ],
+    [
+      217.89,
+      "Settings: where files are saved, and what closing does"
+    ],
+    [
+      227.49,
+      "The manual, in the application"
+    ],
+    [
+      237.1,
+      "Locking the vault wipes every key from memory"
+    ],
+    [
+      242.91,
+      "Done"
+    ]
+  ],
+  "mp4": "docs/demo/quenchkey-demo.mp4",
+  "gif": "docs/demo/quenchkey-demo.gif",
+  "external_checks": [
+    {
+      "check": "the standalone tool reads the vault",
+      "ok": true,
+      "detail": "the destroyed entry is reported as destroyed"
+    },
+    {
+      "check": "the event chain verifies independently",
+      "ok": true,
+      "detail": "anchor 2879-A8EF-D929-3E4A"
+    },
+    {
+      "check": "a destruction certificate was issued and exported",
+      "ok": true,
+      "detail": "quenchkey-destruction-20261001-102517-72e8b332.json"
+    },
+    {
+      "check": "the certificate verifies with no passphrase and no vault",
+      "ok": true,
+      "detail": "verified from the document alone"
+    },
+    {
+      "check": "recovery shares open the vault without the passphrase",
+      "ok": true,
+      "detail": "opened from a quorum"
+    },
+    {
+      "check": "a shared file says it has no deadline, without a passphrase",
+      "ok": true,
+      "detail": "the header declares it, so no tool has to guess"
+    },
+    {
+      "check": "a shared file opens with its own passphrase and no vault",
+      "ok": true,
+      "detail": "opened and byte-identical"
+    },
+    {
+      "check": "the wrong passphrase is refused on a shared file",
+      "ok": true,
+      "detail": "refused, with no guess about which it was"
+    },
+    {
+      "check": "with nobody there, the command line refuses rather than reading the passphrase from the environment",
+      "ok": true,
+      "detail": "refused, and pointed at the command that needs no passphrase"
+    },
+    {
+      "check": "the command line reads the vault the window built",
+      "ok": true,
+      "detail": "0 live, 1 with the key destroyed. Anchor 208C-021D-81B1-2D33."
+    },
+    {
+      "check": "status reports machine-readable state, and the chain verifies",
+      "ok": true,
+      "detail": "anchor 4E84-69DC-CDB9-B38F, 1 entries, chain verifies"
+    },
+    {
+      "check": "every locked file still matches its recorded digest",
+      "ok": true,
+      "detail": "read back and compared by a separate entry point"
+    },
+    {
+      "check": "the command line refuses to destroy a key without --yes",
+      "ok": true,
+      "detail": "refused, as the dialog does"
+    },
+    {
+      "check": "a file can be locked into the vault with no passphrase anywhere, for a cron job",
+      "ok": true,
+      "detail": "deposited with the vault shut, and the passphrase is not in the file"
+    },
+    {
+      "check": "the overview says where the passphrase comes from, and offers no other route",
+      "ok": true,
+      "detail": "one source, and the removed ones are not advertised"
+    }
+  ],
+  "demo_vault_removed": true
+}

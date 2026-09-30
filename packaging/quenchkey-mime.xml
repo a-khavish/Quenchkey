@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+  <mime-type type="application/x-quenchkey">
+    <comment>Quenchkey locked file</comment>
+    <glob pattern="*.qkey"/>
+    <!-- The magic bytes the format actually starts with, so a .qkey file is
+         recognised even when it has been renamed. -->
+    <magic priority="60">
+      <match type="string" value="QKEYLOCK" offset="0"/>
+    </magic>
+    <icon name="quenchkey"/>
+  </mime-type>
+</mime-info>

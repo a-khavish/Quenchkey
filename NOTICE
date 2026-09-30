@@ -1,0 +1,23 @@
+Quenchkey — data with a lifespan
+Copyright 2026 Quenchkey contributors
+
+Licensed under the Apache License, Version 2.0. See LICENSE.
+
+This product bundles no third-party source code. It depends, at runtime, on:
+
+  PyQt5             GPL v3 / Riverbank commercial licence
+  cryptography      Apache 2.0 / BSD-3-Clause (dual)
+  argon2-cffi       MIT
+  py7zr             LGPL-2.1-or-later
+  shamir-mnemonic   MIT
+  fido2 (optional)  BSD-2-Clause / Apache 2.0
+
+Note on PyQt5: it is offered under GPL v3 or a commercial licence from
+Riverbank Computing. Distributing a binary of Quenchkey that bundles PyQt5
+therefore places the combined work under the GPL unless you hold a commercial
+Riverbank licence. Apache 2.0 on this source code does not change that, and it
+is a constraint on distribution rather than on use. If that matters to you, the
+interface layer is confined to quenchkey/ui/ and the core has no Qt dependency
+at all — quenchkey/{crypto,vault,locker,archive,expiry,chain,certificate,
+recovery,factors,passphrase,keyfile}.py import nothing from PyQt5, and
+tools/quenchkey-recover.py needs neither Qt nor this package.

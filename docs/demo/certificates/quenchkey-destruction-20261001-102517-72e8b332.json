@@ -1,0 +1,49 @@
+{
+  "certificate": {
+    "custodian": {
+      "contact": "",
+      "name": "",
+      "organisation": "",
+      "title": ""
+    },
+    "destruction": {
+      "applicability": "The content was encrypted before being written to the .qkey file, with a key generated for that item alone. NIST SP 800-88 cautions against relying on Cryptographic Erase where data was stored unencrypted before encryption was enabled; that does not apply here, but it does apply to any copy of the original content that existed outside the .qkey file.",
+      "cipher": "ChaCha20-Poly1305",
+      "destroyed_at": 1790835917.1050708,
+      "key_derivation": "Argon2id, 256 MiB, 1 pass, parallelism 4",
+      "key_length_bits": 256,
+      "method": "Cryptographic Erase (NIST SP 800-88 Rev. 1, Purge). The 256-bit content encryption key was overwritten with zeros inside the vault and the vault was rewritten. No other copy of that key was ever stored.",
+      "reason": "the permitted number of openings was used up"
+    },
+    "evidence": {
+      "chain_fingerprint": "7304-D76E-3054-F241",
+      "chain_head": "7304d76e3054f241dce144c29aa7c45ca20cb1d49e9d5987b1090f4e0ff5f777",
+      "chain_seq": 14
+    },
+    "format": "quenchkey-destruction-certificate",
+    "issued_at": 1790835917.1050708,
+    "item": {
+      "content_size_bytes": 384050,
+      "encrypted_size_bytes": 384968,
+      "entry_id": "72e8b3328f8dc3b8398ae43726d30d6c",
+      "label": "",
+      "locked_at": 1790835873.4718182,
+      "locked_file": "/tmp/quenchkey-demo-6l0w4sh1/documents/3 items.qkey",
+      "locked_file_deleted_by_quenchkey": false,
+      "locked_file_present_at_destruction": true,
+      "locked_file_sha256": "a3c886e76cebf66541c16562c127e0b83ffe34744fdf31c0600b68f37764d9da",
+      "names": [
+        "term-sheet.pdf",
+        "cap-table.xlsx",
+        "board-minutes.docx"
+      ],
+      "scheduled_destruction": 1790922268.4373293
+    },
+    "limitations": "This certificate is evidence produced by the vault about its own actions. It proves that the vault identified below destroyed the key for the named item at the stated time, and that this document has not been altered since. It does not prove that no copy of the key was taken before that moment, that no copy of the unencrypted content exists elsewhere, or that the clock of the machine involved was accurate. Sanitization of the encrypted file itself was not performed unless stated; the method relies on the destruction of the key, per NIST SP 800-88 Cryptographic Erase.",
+    "tool": "Quenchkey 1.0.0",
+    "vault_id": "5863b5fc6f702a8adeedc3695b8621b2",
+    "version": 1
+  },
+  "public_key": "c84c26a0a33b07e8c75378968f764f9f8308c5fe5b37ff6f5786786a1b5626fa",
+  "signature": "da76270172e3287ba552b373562ce3a7e30456b1687e1a8552d9a43d9457bddc77c17f4c5438b277a9e936261b9f2400ab8d4795b46c80670a9cb86c79f4f209"
+}

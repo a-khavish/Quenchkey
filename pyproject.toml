@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quenchkey"
+version = "1.0.0"
+description = "The key goes out — local encryption where expiry destroys the key, not the file, so every copy becomes unreadable at once."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Quenchkey contributors" }]
+keywords = [
+    "encryption", "cryptographic-erase", "crypto-shredding", "argon2",
+    "chacha20-poly1305", "slip39", "data-retention", "nist-800-88",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: X11 Applications :: Qt",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: Security :: Cryptography",
+]
+
+dependencies = [
+    "PyQt5>=5.15,<6",
+    "cryptography>=42.0",
+    "argon2-cffi>=23.1",
+    "py7zr>=0.21",
+    "shamir-mnemonic>=0.3",
+]
+
+[project.optional-dependencies]
+# A hardware security key as a second factor. Imported lazily, so the
+# application runs without it.
+fido2 = ["fido2>=1.1"]
+dev = ["pytest>=7.0", "pyflakes>=3.0"]
+
+[project.urls]
+Homepage = "https://github.com/a-khavish/Quenchkey"
+Source = "https://github.com/a-khavish/Quenchkey"
+Issues = "https://github.com/a-khavish/Quenchkey/issues"
+Changelog = "https://github.com/a-khavish/Quenchkey/blob/main/CHANGELOG.md"
+
+[project.scripts]
+quenchkey = "quenchkey.ui.app:main"
+# The standalone decryptor deliberately imports nothing from this package, so
+# it is shipped as a script rather than wired to a module entry point.
+
+[tool.setuptools]
+packages = ["quenchkey", "quenchkey.ui"]
+
+[tool.setuptools.package-data]
+quenchkey = ["data/*.txt.gz", "assets/*.svg", "assets/*.png"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --strict-markers"

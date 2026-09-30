@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Quenchkey">
+  <title>Quenchkey</title>
+  <desc>A keyhole holding a flame that has just been put out, its tip breaking into three rising wisps of smoke.</desc>
+  <defs>
+    <linearGradient id="qkFlame" x1="32" y1="44" x2="32" y2="12" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4DD0E1"/>
+      <stop offset="0.55" stop-color="#8CEDF7"/>
+      <stop offset="1" stop-color="#8CEDF7" stop-opacity="0.35"/>
+    </linearGradient>
+    <linearGradient id="qkRing" x1="10" y1="58" x2="54" y2="8" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3FB6C6"/>
+      <stop offset="1" stop-color="#8CEDF7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- the keyhole: a ring over a tapering slot, drawn as one silhouette so it
+       still reads as a keyhole when the icon is 16 pixels across -->
+  <path d="M32 20.5 a10.5 10.5 0 0 1 6.4 18.8 L41.5 55 a1.6 1.6 0 0 1 -1.6 1.9
+           L24.1 56.9 a1.6 1.6 0 0 1 -1.6 -1.9 L25.6 39.3 A10.5 10.5 0 0 1 32 20.5 Z"
+        fill="none" stroke="url(#qkRing)" stroke-width="3.1"
+        stroke-linejoin="round"/>
+
+  <!-- the flame inside it, low and guttering rather than burning tall -->
+  <path d="M32 44.2 C27.8 41.6 26.4 38.2 27.6 34.6 C28.4 32.2 30.1 30.6 31.0 28.2
+           C31.6 29.9 31.4 31.4 30.9 32.9 C32.6 31.8 33.6 30.0 33.8 27.9
+           C36.4 30.6 37.3 33.5 36.6 36.6 C36.1 39.0 34.5 42.0 32 44.2 Z"
+        fill="url(#qkFlame)"/>
+
+  <!-- three wisps leaving the tip: the moment after, not before. They start
+       where the flame ends so the eye reads one motion, not two objects. -->
+  <path d="M33.2 26.8 C31.6 24.0 32.8 21.8 34.4 20.2" fill="none"
+        stroke="#8CEDF7" stroke-width="1.7" stroke-linecap="round" opacity="0.75"/>
+  <path d="M30.6 27.4 C29.4 25.0 29.9 23.0 31.2 21.4" fill="none"
+        stroke="#8CEDF7" stroke-width="1.4" stroke-linecap="round" opacity="0.48"/>
+  <path d="M35.6 25.4 C35.0 23.4 36.0 21.9 37.2 20.8" fill="none"
+        stroke="#8CEDF7" stroke-width="1.2" stroke-linecap="round" opacity="0.32"/>
+</svg>

@@ -1,0 +1,15 @@
+[Unit]
+Description=Quenchkey — check expiry deadlines regularly
+
+[Timer]
+# Monotonic rather than calendar-based: OnStartupSec is measured from the
+# start of your own session manager, so a machine that was switched off over a
+# deadline tidies up shortly after you log back in rather than waiting for the
+# next slot on a wall clock.
+OnStartupSec=2min
+OnUnitActiveSec=15min
+AccuracySec=1min
+Unit=quenchkey-sweep.service
+
+[Install]
+WantedBy=timers.target

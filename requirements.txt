@@ -1,0 +1,16 @@
+# Quenchkey runtime dependencies.
+#
+# No cryptographic primitive is implemented in this project. Argon2id comes
+# from argon2-cffi (the reference implementation); ChaCha20-Poly1305,
+# AES-256-GCM, HKDF and Ed25519 come from cryptography, which wraps OpenSSL;
+# the k-of-n secret sharing is Trezor's SLIP-39 implementation.
+
+PyQt5>=5.15,<6           # user interface
+cryptography>=42.0       # ChaCha20-Poly1305, AES-256-GCM, HKDF, Ed25519
+argon2-cffi>=23.1        # Argon2id key derivation
+py7zr>=0.21              # 7z archiving with encrypted headers
+shamir-mnemonic>=0.3     # SLIP-39 recovery shares
+
+# Optional. Only needed to use a hardware security key as a second factor;
+# imported lazily, so the application runs without it.
+# fido2>=1.1

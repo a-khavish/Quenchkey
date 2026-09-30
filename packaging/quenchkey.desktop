@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Name=Quenchkey
+GenericName=Expiring file vault
+Comment=Lock files to a deadline — when it passes, the key is destroyed, not the file
+Exec=quenchkey %F
+TryExec=quenchkey
+Icon=quenchkey
+Terminal=false
+StartupNotify=true
+StartupWMClass=quenchkey
+Categories=System;Security;
+Keywords=encryption;vault;expire;shred;destroy;privacy;argon2;retention;gdpr;
+MimeType=application/x-quenchkey;

@@ -1,0 +1,11 @@
+[Unit]
+Description=Quenchkey — delete locked files whose deadline has passed
+
+[Service]
+Type=oneshot
+# No passphrase is involved, so this can do exactly two things: delete the
+# locked files listed in the vault's own schedule index, and record what fell
+# due. Destroying the keys needs the vault open and happens at the next
+# unlock. quenchkey/schedule.py explains why it cannot be otherwise.
+ExecStart=__QUENCHKEY_BIN__ --sweep --notify
+NoNewPrivileges=yes
